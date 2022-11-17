@@ -140,11 +140,9 @@ let getApple = setInterval(randomizeApple, 50);
 function randomizeApple() {
     if (apple.className !== "apple"){
         let a = Math.floor(Math.random() * gB.length);
-        for (i=0; i<gB.length; i++){
-            if (gB[a].className !== "boarder" && gB[a].className !== "snake"){
-                apple = gB[a];
-                apple.className = "apple";
-            }
+        if (gB[a].className !== "boarder" && gB[a].className !== "snake"){
+            apple = gB[a];
+            apple.className = "apple";
         }
     }
 }
